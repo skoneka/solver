@@ -1,0 +1,49 @@
+NAZWA
+      solver - program testowy dla funkcji rozwiązującej 
+      iteracyjnie rzadki symetryczny układ równań liniowych
+
+SKŁADNIA
+      solver [ opcje ] ... 
+
+OPIS
+      Program testujący wczytuje lub generuje następujące dane:
+      
+            A - macierz rzadka (opcja -m), x - wektor wynikowy (opcja -x), 
+            x0 - wektor startowy (opcja -0), b = A * x
+
+      Następnie program przekazuje dane A,b,x0 funkcji solve, 
+      która rozwiązuje układ równań A*x=b i zwraca wynik.
+      Program testowy porównuje wynik funkcji solve i wynik prawidłowy
+      i informuje użytkownika o wynikach.
+    
+      Dane, które nie zostaną określone przez użytkownika 
+      są generowane automatycznie. W razie niezgodności rozmiarów 
+      macierzy i wektorów program przerywa działanie.
+
+      Macierze przechowywane są w pamięci w sposób efektywny - wg. schematu Yale 
+      Dokładniejsze informacje o YSM i o formacie danych wejściowych
+      znajdują się w Dokumentacji Głównej programu.
+      
+OPCJE
+      FLAGI:
+      -h --help             - wyświetl krótką pomoc
+      -v --verbose          - wyświetlaj więcej informacji
+      -q --quiet            - wyświetlaj minimalną ilość informacji
+      -a --auto             - ignoruj dane wejściowe,   
+                              generuj automatycznie wszystkie dane
+      -n --nice             - losuj macierze z liczbami o wartościach całkowitych
+
+      ARGUMENTY:
+      -s --size <int>       - ustaw rozmiar losowanej macierzy             
+      -r --sparsity <double> - modyfikuj "rzadkość" macierzy
+      -o --file <filename>  - drukuj wyjście do pliku
+      -m --m <filename>     - macierz wejściowa
+      -x --mx <filename>    - macierz wynikowa
+      -0 --mx0<filename>    - macierz startowa
+      -y --max <double>     - maksymalna losowana liczba
+      -z --min <double>     - minimalna losowana liczba
+      -c --check <double>   - dokładność z jaką program porównuje 
+                              wektor wejściowy i wyjściowy
+      -p --precision <double> - dokładność metody rozwiązującej
+      -i --max-iter <int>   - maksymalna liczba iteracji
+      -d --diagonal <double>  - wartości jakimi wypełniana jest diagonalna

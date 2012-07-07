@@ -1,0 +1,3 @@
+#!/bin/sh
+xxd -i man_tester > ../src/man_tester.xxd
+pdflatex solver.tex

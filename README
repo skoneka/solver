@@ -1,0 +1,11 @@
+Iteracyjny solver rzadki układów równań
+
+Kompilacja:
+    make depend # przy pierwszym uruchomieniu w celu wygenerowania zależności
+    make
+
+Pomoc
+    ./solver --help
+
+Dokumentacja
+    doc/solver.pdf

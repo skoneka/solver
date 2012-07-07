@@ -1,0 +1,43 @@
+NAZWA
+      solve
+
+SKŁADNIA
+
+      #include "solver.h"
+      vec_t solve(yale_t a, vec_t b, vec_t x0,
+                  int max_iter, double precision);
+
+OPIS
+      Funkcja rozwiązuje iteracyjnie rzadki, symetryczny układ równań
+      liniowych w postaci A*x=b używając zaimplementowanej metody
+      (metoda gradientow sprzężonych(conjugate gradients method)).
+
+      Macierze powinny by zapisane wg. schematu Yale.
+      Dokładniejsze informacji o YSM znajdują się w Dokumentaji Głównej.
+
+      Funkcja zwraca wskaźnik na wektor wynikowy 
+      lub NULL w przypadku niepowodzenia.
+
+ARGUMENTY:
+      yale_t a          - macierz zapisana w YSM
+      vec_t b           - wektor
+      vec_t x0          - wektor startowy
+      int  max_iter     - maksymalna liczba iteracjii
+      double precision  - dokładność do jakiej poszukiwane jest rozwiązanie
+
+PRZYKŁADY
+      #include "matrix.h"
+      #include "yale.h"
+      #include "vec.h"
+      #include "solver.h"
+      matrix_t m = matrix_gen_sym(10 , 0.05, -10, 10, 1);
+      yale_t y=make_yale(m);
+      vec_t b=vec_gen_sym(10, -10, 10, 1);
+      vec_t x0= make_vec(10);
+      
+      vec_t x = solve(a,b,x,0,0,0);
+      
+      print_vec(stdout, x);
+      free_mat(m); free_yale(y); free_vec(b); free_vec(x0); free_vec(x);
+
+
